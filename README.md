@@ -1,5 +1,7 @@
 # Email Notification Library using phpMailer
 
+## Developing
+
 This library has the function to send email using phpmailer library. Doing this uncomplicated action is essential for any system.
 
 To install the library, run the following command:
@@ -38,6 +40,6 @@ MIT
 ** Another UpInside Training course, make good use! **
 
 [//]:#
-*[Jr Souza]: <mailto:contato@arthworks.com.br>
-*[ArthWorks]: <https://www.arthworks.com.br>
-*[phpMailer]: <https://github.com/PHPMailer/PHPMailer>
+[Jr Souza]: <mailto:contato@arthworks.com.br>
+[ArthWorks]: <https://www.arthworks.com.br>
+[phpMailer]: <https://github.com/PHPMailer/PHPMailer>
