@@ -20,10 +20,10 @@ class Email
 		//Server settings
 		$this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
 		$this->mail->isSMTP();                                            // Send using SMTP
-		$this->mail->Host       = 'smtp.sendgrid.net';                    // Set the SMTP server to send through
+		$this->mail->Host       = '';                    // Set the SMTP server to send through
 		$this->mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-		$this->mail->Username   = 'apikey';                               // SMTP username
-		$this->mail->Password   = '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';// SMTP password
+		$this->mail->Username   = '';                               // SMTP username
+		$this->mail->Password   = '';// SMTP password
 		$this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
 		$this->mail->Port       = 587;                                    // TCP port to connect to
 		$this->mail->CharSet    = 'utf-8';
