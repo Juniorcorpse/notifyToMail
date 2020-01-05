@@ -5,15 +5,17 @@ namespace Notificarion;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
 
 class Email
 {
+
 	/** @var array */
 	private $data;
 
+
 	/** @var \stdClass */
 	private $mail;
+
 
 	public function __construct(
 		int $smtpDegug,
@@ -54,16 +56,23 @@ class Email
 		string $addressMail,
 		string $addressName
 	) {
+
 		$this->mail->Subject = $subject;
 		$this->mail->Body = $body;
 		$this->mail->addReplyTo($recipient, $recipientName);
 		$this->mail->addAddress($addressMail, $addressName);
 
+
 		try {
 			$this->mail->send();
 		} catch (Exception $e) {
-			echo "Erro ao enviar o e-mail: {$this->mail->ErrorInfo} {$e->getMessage()}";
+
+			try {
+				$this->mail->send();
+			} catch (Exception $e) {
+
+				echo "Erro ao enviar o e-mail: {$this->mail->ErrorInfo} {$e->getMessage()}";
+			}
 		}
 	}
-
 }

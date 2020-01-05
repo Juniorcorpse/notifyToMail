@@ -1,0 +1,26 @@
+{
+  "name": "juniorcorpse/notification",
+  "description": "This is a library that uses composer as the basis for generating email notifications",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "JrSouza",
+      "email": "junior_corpse@hotmail.com",
+      "homepage": "https://www.arthworks.com.br",
+      "role": "Developer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "phpmailer/phpmailer": "6.1.1"
+  },
+    "config": {
+        "vendor-dir": "lib_ext"
+    },
+  "autoload": {
+    "psr-4": {
+      "Notificarion\\": "App"
+    }
+  }
+}
