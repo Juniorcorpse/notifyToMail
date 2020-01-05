@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 # notifyToMail
 This is a library that uses composer as the basis for generating email notifications
-=======
+
 # Email Notification Library using phpMailer
 
 ## Developing
@@ -41,7 +41,7 @@ License
 
 MIT
 
-** Another ArthWorks! **
+** ArthWorks! **
 
 [//]:#
 [Jr Souza]: <mailto:contato@arthworks.com.br>
