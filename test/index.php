@@ -1,24 +1,24 @@
 <?php
 
 require dirname(__DIR__, 1) . "/lib_ext/autoload.php";
+require __DIR__."/config.php";
 
 use Notificarion\Email;
 
-define("MAIL_PASS", "sua senha aqui");
 $notification = new Email(
 	2,
-	"test@test.com",
-	"user test",
-	MAIL_PASS,
-	"test@test.com",
-	"Test"
+	CONF_MAIL_HOST,
+	CONF_MAIL_USER,
+	CONF_MAIL_PASS,
+	CONF_MAIL_SENDER['address'],
+	CONF_MAIL_SENDER['name']
 );
 $notification->sendEmail(
 	"Assunto de teste composer",
 	"<p>composer teste <b>Notification</b></p>",
-	"recipient@gmail.com",
-	"recipient_name",
-	"recipient@gmail.com",
+	"souzajrmar@gmail.com",
+	CONF_MAIL_SENDER['name'],
+	"souzajrmar@gmail.com",
 	"address Name"
 );
 
