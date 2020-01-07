@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Notificarion;
+namespace Notification;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;

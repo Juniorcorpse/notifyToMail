@@ -3,7 +3,7 @@
 require dirname(__DIR__, 1) . "/lib_ext/autoload.php";
 require __DIR__."/config.php";
 
-use Notificarion\Email;
+use Notification\Email;
 
 $notification = new Email(
 	2,

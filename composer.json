@@ -1,6 +1,11 @@
 {
   "name": "juniorcorpse/notification",
   "description": "This is a library that uses composer as the basis for generating email notifications",
+  "keywords": [
+    "ArthWorks",
+    "notifications",
+    "NotifyToMail"
+  ],
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -20,7 +25,7 @@
     },
   "autoload": {
     "psr-4": {
-      "Notificarion\\": "App"
+      "Notification\\": "src"
     }
   }
 }
