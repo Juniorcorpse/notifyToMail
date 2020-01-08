@@ -1,5 +1,5 @@
 {
-  "name": "juniorcorpse/notification",
+  "name": "juniorcorpse/notifytomail",
   "description": "This is a library that uses composer as the basis for generating email notifications",
   "keywords": [
     "ArthWorks",
