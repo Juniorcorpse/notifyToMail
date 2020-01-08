@@ -24,9 +24,20 @@ require __DIR__.'/vendor/autoload.php';
 use Notification\Email;
 
 
-$email = new Email(2, "mail.host.com", "your@email.com", "your-pass", "smtp secure (tls / ssl)", "port (587)","from@email.com", "From Name");
+$email = new Email(
+            2,
+            "mail.host.com",
+            "your@email.com",
+            "your-pass",
+            "smtp secure (tls / ssl)",
+            "port (587)");
 
-$email->sendEmail("SUbject", "Content", "reply@email.com", "Replay Name", "address@email.com", "Address Name");
+$email->boot(
+        	"SUbject"
+        	"<p>"Content"</b></p>",
+        	"reply@email.com",
+        	"Replay Name"
+            )->sendEmail("address@email.com", "Address Name");
 ```
 
 Note that all email sending setup is using the magic builder method! Once you invoke the builder method within your application, your system will be able to perform the triggers.
