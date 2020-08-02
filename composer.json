@@ -18,6 +18,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
+    "php":"^7.2",
     "phpmailer/phpmailer": "^6.1.6"
   },
     "config": {
