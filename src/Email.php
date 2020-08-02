@@ -96,21 +96,7 @@ class Email
 	 */
 	public function sendEmail(string $from, string $fromName): bool
 	{
-		if (empty($this->data)) {
-			echo "<b>Erro ao enviar o e-mail com parametros vasios:</b> ";
-			return false;
-		}
-
-		if (!$this->is_email($this->data->recipient_email)) {		
-			echo "<b>O e-mail de destinatário não é válido:</b> ";
-			return false;			
-		}
-		
-		if (!$this->is_email($from)) {
-			echo "<b>O e-mail de remetente não é válido:</b> ";
-            return false;
-		}
-		
+				
 		try {
 			$this->mail->Subject = $this->data->subject;
             $this->mail->msgHTML($this->data->body);
