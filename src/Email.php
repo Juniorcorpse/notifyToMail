@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 class Email
 {
 
-	 /** @var array */
+	 /** @var \stdClass */
 	 private $data;
 
 	 /** @var PHPMailer */
@@ -81,13 +81,13 @@ class Email
 	}
 
 	/**
- * @param string $email
- * @return bool
- */
-function is_email(string $email): bool
-{
-	return filter_var($email, FILTER_VALIDATE_EMAIL);
-}
+	 * @param string $email
+	 * @return bool
+	 */
+	public function is_email(string $email): bool
+	{
+		return filter_var($email, FILTER_VALIDATE_EMAIL);
+	}
 
 	/**
 	 * @param string $fromAddressMail
@@ -103,8 +103,7 @@ function is_email(string $email): bool
 
 		if (!$this->is_email($this->data->recipient_email)) {		
 			echo "<b>O e-mail de destinatário não é válido:</b> ";
-			return false;
-			exit;
+			return false;			
 		}
 		
 		if (!$this->is_email($from)) {
@@ -132,23 +131,7 @@ function is_email(string $email): bool
 			return false;
 		}
 	}
-	public function attempt($from){
-		if (empty($this->data)) {
-			echo "Erro ao enviar o e-mail com parametros vasios: {$this->mail->ErrorInfo} {$e->getMessage()}";
-			return false;
-		}
-		if (!is_email($this->data->recipient_email)) {		
-			echo "O e-mail de destinatário não é válido: {$this->mail->ErrorInfo} {$e->getMessage()}";
-			return false;
-		}
-		
-		if (!is_email($from)) {
-			echo "O e-mail de remetente não é válido: {$this->mail->ErrorInfo} {$e->getMessage()}";
-            return false;
-		}
-		return true;
-	}
-
+	
 	/**
 	 * @return PHPMailer
 	 */
