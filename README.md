@@ -52,7 +52,7 @@ License
 
 MIT
 
-** ArthWorks! **
+**ArthWorks!**
 
 [//]:#
 [Jr Souza]: <mailto:contato@arthworks.com.br>
