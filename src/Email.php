@@ -9,13 +9,11 @@ use PHPMailer\PHPMailer\Exception;
 class Email
 {
 
-	/** @var array */
-	private $data;
+	 /** @var array */
+	 private $data;
 
-
-	/** @var \stdClass */
-	private $mail;
-
+	 /** @var PHPMailer */
+	 private $mail;
 
 	/**
 	 * Email constructor.
@@ -33,14 +31,14 @@ class Email
 		string $host,
 		string $user,
 		string $passwd,
-		string $smtpSecure = PHPMailer::ENCRYPTION_STARTTLS,
+		string $smtpSecure,
 		int $port = 587,
 		string $charSEt = 'utf-8',
-		string $language = 'br'
+		string $language = 'br'		
+		
 	) {
-		$this->data = new \stdClass();
-
 		$this->mail = new PHPMailer(true);
+        $this->data = new \stdClass();
 		//Server settings
 		$this->mail->SMTPDebug = $smtpDegug;          // Enable verbose debug output
 		$this->mail->isSMTP();                        // Send using SMTP
@@ -53,6 +51,7 @@ class Email
 		$this->mail->CharSet = $charSEt;
 		$this->mail->setLanguage($language);
 		$this->mail->isHTML(true);
+		
 	}
 
 	/**
@@ -66,7 +65,7 @@ class Email
 	{
 		$this->data->subject = $subject;
 		$this->data->body = $body;
-		$this->data->recipient_mail = $recipient;
+		$this->data->recipient_email = $recipient;
 		$this->data->recipient_name = $recipientName;
 		return $this;
 	}
@@ -82,17 +81,43 @@ class Email
 	}
 
 	/**
+ * @param string $email
+ * @return bool
+ */
+function is_email(string $email): bool
+{
+	return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+	/**
 	 * @param string $fromAddressMail
 	 * @param string $fromNameAddressMail
 	 * @return bool
 	 */
-	public function sendEmail(string $fromAddressMail, string $fromNameAddressMail): bool
+	public function sendEmail(string $from, string $fromName): bool
 	{
+		if (empty($this->data)) {
+			echo "<b>Erro ao enviar o e-mail com parametros vasios:</b> ";
+			return false;
+		}
+
+		if (!$this->is_email($this->data->recipient_email)) {		
+			echo "<b>O e-mail de destinatário não é válido:</b> ";
+			return false;
+			exit;
+		}
+		
+		if (!$this->is_email($from)) {
+			echo "<b>O e-mail de remetente não é válido:</b> ";
+            return false;
+		}
+		
 		try {
 			$this->mail->Subject = $this->data->subject;
-			$this->mail->msgHTML($this->data->body);
-			$this->mail->addAddress($this->data->recipient_mail, $this->data->recipient_name);
-			$this->mail->setFrom($fromAddressMail, $fromNameAddressMail);
+            $this->mail->msgHTML($this->data->body);
+            $this->mail->addAddress($this->data->recipient_email, $this->data->recipient_name);
+			$this->mail->setFrom($from, $fromName);
+			
 
 			if (!empty($this->data->attach)) {
 				foreach ($this->data->attach as $path => $name) {
@@ -107,6 +132,22 @@ class Email
 			return false;
 		}
 	}
+	public function attempt($from){
+		if (empty($this->data)) {
+			echo "Erro ao enviar o e-mail com parametros vasios: {$this->mail->ErrorInfo} {$e->getMessage()}";
+			return false;
+		}
+		if (!is_email($this->data->recipient_email)) {		
+			echo "O e-mail de destinatário não é válido: {$this->mail->ErrorInfo} {$e->getMessage()}";
+			return false;
+		}
+		
+		if (!is_email($from)) {
+			echo "O e-mail de remetente não é válido: {$this->mail->ErrorInfo} {$e->getMessage()}";
+            return false;
+		}
+		return true;
+	}
 
 	/**
 	 * @return PHPMailer
@@ -115,4 +156,6 @@ class Email
 	{
 		return $this->mail;
 	}
+
+	
 }
