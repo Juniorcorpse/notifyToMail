@@ -56,6 +56,6 @@ MIT
 
 [//]:#
 [Jr Souza]: <mailto:contato@arthworks.com.br>
-[ArthWorks]: <https://arthworks.com.br>
+[ArthWorks]: <https://www.arthworks.com.br>
 [phpMailer]: <https://github.com/PHPMailer/PHPMailer>
 
