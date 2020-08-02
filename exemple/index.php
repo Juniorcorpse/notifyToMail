@@ -16,7 +16,7 @@ $notification = new Email(
 $notification->boot(
 	"Assunto de teste composer",
 	"<p>composer teste <b>Notification com o boot</b></p>",
-	"abbathdeath@gmail.com",
+	"recipienth@arthworks.com.br",
 	"address Name")
 	->sendEmail(CONF_MAIL_SENDER['address'], CONF_MAIL_SENDER['name']);
 

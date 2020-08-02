@@ -33,7 +33,7 @@ To make use of the library, simply require composer autoload, invoke the class, 
 
 require __DIR__.'/vendor/autoload.php';
 
-use Notification\Email;
+use JuniorCorpse\NotifyToMail\Email;
 
 
 $email = new Email(
