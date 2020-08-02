@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Notification;
+namespace JuniorCorpse\NotifyToMail;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
