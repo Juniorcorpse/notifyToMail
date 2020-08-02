@@ -47,6 +47,7 @@ Note that all email sending setup is using the magic builder method! Once you in
 * [Arthwoks] - Official website software
 * [phpMailer] - Lib to send Email
 
+
 License
 ----
 
@@ -56,6 +57,6 @@ MIT
 
 [//]:#
 [Jr Souza]: <mailto:contato@arthworks.com.br>
-[ArthWorks]: <https://www.arthworks.com.br>
+[ArthWorks]: <https://www.arthworks.com.br/>
 [phpMailer]: <https://github.com/PHPMailer/PHPMailer>
-
+[Arthwoks](https://www.arthworks.com.br)
