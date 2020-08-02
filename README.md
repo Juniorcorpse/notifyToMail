@@ -1,6 +1,18 @@
 
-# notifyToMail
+# NotifyToMail
+
+[![Maintainer](http://img.shields.io/badge/maintainer-@juniorcorpse-blue.svg?style=flat-square)](https://twitter.com/ArthWorks)
+[![Source Code](http://img.shields.io/badge/source-juniorcorpse/notifytomail-blue.svg?style=flat-square)](https://github.com/juniorcorpse/notifytomail)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/juniorcorpse/notifytomail.svg?style=flat-square)](https://packagist.org/packages/juniorcorpse/notifytomail)
+[![Latest Version](https://img.shields.io/github/release/juniorcorpse/notifytomail.svg?style=flat-square)](https://github.com/juniorcorpse/notifytomail/releases)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Build](https://img.shields.io/scrutinizer/build/g/juniorcorpse/notifytomail.svg?style=flat-square)](https://scrutinizer-ci.com/g/juniorcorpse/notifytomail)
+[![Quality Score](https://img.shields.io/scrutinizer/g/juniorcorpse/notifytomail.svg?style=flat-square)](https://scrutinizer-ci.com/g/juniorcorpse/notifytomail)
+[![Total Downloads](https://img.shields.io/packagist/dt/juniorcorpse/notifytomail.svg?style=flat-square)](https://packagist.org/packages/juniorcorpse/notifytomail)
+
 This is a library that uses composer as the basis for generating email notifications
+
+Você pode saber mais **[clicando aqui](https://www.arthworks.com.br/)**.
 
 # Email Notification Library using phpMailer
 
